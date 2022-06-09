@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ServiceDesk.Gateway.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Gateway_WsGenexusDemanda_WS_ListarDemanda" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webdesk.dealernet.com.br/WebDeskWF/aws_servdesk_demanda.aspx</Value>
+    </Setting>
+    <Setting Name="Gateway_WsGenexusSolucao_ws_servdesk_solucao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webdesk.dealernet.com.br/WebDeskWF/aws_servdesk_commit.aspx</Value>
+    </Setting>
+    <Setting Name="Gateway_WsGenexusUpdateDemanda_ws_servdesk_demanda_objetos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webdesk.dealernet.com.br/WebDeskWF/aws_servdesk_demanda_objetos.aspx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

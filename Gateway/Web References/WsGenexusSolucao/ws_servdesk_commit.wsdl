@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="WebDeskWF" xmlns:wsdlns="WebDeskWF" name="WS_Servdesk_Commit" targetNamespace="WebDeskWF" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="WebDeskWF">
+      <xsd:element name="WS_Servdesk_Commit.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Demanda" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Comentario" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Versao" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Solucao" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="WS_Servdesk_Commit.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Erro" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="WS_Servdesk_Commit.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:WS_Servdesk_Commit.Execute" />
+  </message>
+  <message name="WS_Servdesk_Commit.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:WS_Servdesk_Commit.ExecuteResponse" />
+  </message>
+  <portType name="WS_Servdesk_CommitSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:WS_Servdesk_Commit.ExecuteSoapIn" />
+      <output message="wsdlns:WS_Servdesk_Commit.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="WS_Servdesk_CommitSoapBinding" type="wsdlns:WS_Servdesk_CommitSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="WebDeskWFaction/AWS_SERVDESK_COMMIT.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WS_Servdesk_Commit">
+    <port name="WS_Servdesk_CommitSoapPort" binding="wsdlns:WS_Servdesk_CommitSoapBinding">
+      <soap:address location="http://webdesk.dealernet.com.br/WebDeskWF/aws_servdesk_commit.aspx" />
+    </port>
+  </service>
+</definitions>

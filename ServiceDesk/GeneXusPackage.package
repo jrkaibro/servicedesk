@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Package xmlns='http://schemas.genexus.com/addin/v1.0'
+			id='d89dfc1e-f12d-420c-9c93-18bfdfc6a3b0'
+			name='ServiceDesk'>
+
+
+  <Resources>
+    <Resource type="strings" name="DealerNet.Packages.ServiceDesk.Resources"/>
+  </Resources>
+
+  <ToolWindows>
+    <ToolWindow id='3C3DEAE0-66DD-48bd-866D-463C4075385A' title='toolWindowTitle' location='right'/>
+  </ToolWindows>
+  
+</Package>

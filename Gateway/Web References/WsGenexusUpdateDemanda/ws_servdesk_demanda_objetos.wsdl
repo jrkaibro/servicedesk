@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="WebDeskWF" xmlns:wsdlns="WebDeskWF" name="ws_servdesk_demanda_objetos" targetNamespace="WebDeskWF" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="WebDeskWF">
+      <xsd:element name="ws_servdesk_demanda_objetos.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Demanda" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ws_servdesk_demanda_objetos.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Demandaobjetosversao" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="ws_servdesk_demanda_objetos.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:ws_servdesk_demanda_objetos.Execute" />
+  </message>
+  <message name="ws_servdesk_demanda_objetos.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:ws_servdesk_demanda_objetos.ExecuteResponse" />
+  </message>
+  <portType name="ws_servdesk_demanda_objetosSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:ws_servdesk_demanda_objetos.ExecuteSoapIn" />
+      <output message="wsdlns:ws_servdesk_demanda_objetos.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ws_servdesk_demanda_objetosSoapBinding" type="wsdlns:ws_servdesk_demanda_objetosSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="WebDeskWFaction/AWS_SERVDESK_DEMANDA_OBJETOS.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ws_servdesk_demanda_objetos">
+    <port name="ws_servdesk_demanda_objetosSoapPort" binding="wsdlns:ws_servdesk_demanda_objetosSoapBinding">
+      <soap:address location="http://webdesk.dealernet.com.br/WebDeskWF/aws_servdesk_demanda_objetos.aspx" />
+    </port>
+  </service>
+</definitions>
