@@ -1,2 +1,2 @@
 # servicedesk
-ServiccDesk-Extension-Genexus
+ServiceDesk-Extension-Genexus
